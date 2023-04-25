@@ -1,0 +1,18 @@
+def frequency_map(text, k):
+    freq = {}
+    n = len(text)
+    for i in range(n - k + 1):
+        pattern = text[i:i+k]
+        freq[pattern] = freq.get(pattern, 0) + 1
+    return freq
+
+def frequent_words(text, k):
+    freq = frequency_map(text, k)
+    m = max(freq.values())
+    words = [key for key in freq if freq[key] == m]
+    return words
+
+text = "CGCCTAAATAGCCTCGCGGAGCCTTATGTCATACTCGTCCT"
+k = 3
+words = frequent_words(text, k)
+print(words)  # Output: ["CCT"]
