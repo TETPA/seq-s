@@ -1,0 +1,23 @@
+def reverse_complement(pattern):
+    complement_dict = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A'}
+    reverse = pattern[::-1]
+    reverse_compl = ''.join([complement_dict[base] for base in reverse])
+    return reverse_compl
+
+def reverse(pattern):
+    return pattern[::-1]
+
+def complement(pattern):
+    complement_dict = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A'}
+    compl = ''.join([complement_dict[base] for base in pattern])
+    return compl
+
+pattern = "GATTACA"
+reverse_compl = reverse_complement(pattern)
+print(reverse_compl)  # Output: "TGTAATC"
+
+rev = reverse(pattern)
+print(rev)  # Output: "ACATTAG"
+
+comp = complement(pattern)
+print(comp)  # Output: "CTAATGT"
