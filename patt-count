@@ -1,0 +1,13 @@
+def pattern_count(text, pattern):
+    count = 0
+    n = len(text)
+    k = len(pattern)
+    for i in range(n - k + 1):
+        if text[i:i + k] == pattern:
+            count += 1
+    return count
+
+text = "GACCATCAAAACTGATAAACTACTTAAAAATCAGT"
+pattern = "AAA"
+count = pattern_count(text, pattern)
+print(count)  # Output: 4
